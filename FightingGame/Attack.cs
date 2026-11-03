@@ -6,6 +6,8 @@ namespace FightingGame
 {
     internal struct Attack
     {
+        public double Damage = 0.0;
+        public double Knockback = 0.0;
         public Attack()
         {
 
@@ -15,7 +17,5 @@ namespace FightingGame
             Damage = dam;
             Knockback = knb;
         }
-        public double Damage = 0;
-        public double Knockback = 0;
     }
 }
