@@ -9,6 +9,7 @@ namespace FightingGame
     {
         public void Play()
         {
+            Console.ReadKey();
             Character c1 = new Character()
             {
                 Pos = -0.1,
@@ -49,13 +50,13 @@ namespace FightingGame
                 Console.WriteLine("pos: " + ch.Pos);
                 Console.WriteLine("hp:" + ch.Health);
             }
-            const int BoardSize = 40;
+            const int BoardSize = 100;
             char[] board = new char[BoardSize];
             Array.Fill(board, '_');
             foreach (var ch in chars)
             {
                 double clamped = Math.Clamp(ch.Pos, -100.0, 100.0);
-                int idx = (int)(clamped / (100 / BoardSize * 2) + (BoardSize / 2 - 1));
+                int idx = (int)(clamped / (200.0 / BoardSize) + (BoardSize / 2 - 1));
                 idx = Math.Clamp(idx, 0, BoardSize - 1);
                 board[idx] = '#';
             }
